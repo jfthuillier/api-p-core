@@ -11,18 +11,17 @@
 
 declare(strict_types=1);
 
-namespace ApiPlatform\Tests\Serializer;
+namespace ApiPlatform\Serializer\Tests;
 
-use ApiPlatform\Api\FilterInterface;
-use ApiPlatform\Exception\RuntimeException;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\Resource\Factory\ResourceMetadataCollectionFactoryInterface;
 use ApiPlatform\Metadata\Resource\ResourceMetadataCollection;
-use ApiPlatform\Serializer\Filter\FilterInterface as SerializerFilterInterface;
+use ApiPlatform\Serializer\Exception\RuntimeException;
+use ApiPlatform\Serializer\Filter\FilterInterface;
 use ApiPlatform\Serializer\SerializerContextBuilderInterface;
 use ApiPlatform\Serializer\SerializerFilterContextBuilder;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\DummyGroup;
+use ApiPlatform\Serializer\Tests\Fixtures\DummyGroup;
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Container\ContainerInterface;
@@ -52,7 +51,7 @@ class SerializerFilterContextBuilderTest extends TestCase
         $resourceMetadataFactoryProphecy = $this->prophesize(ResourceMetadataCollectionFactoryInterface::class);
         $resourceMetadataFactoryProphecy->create(DummyGroup::class)->willReturn($resourceMetadata)->shouldBeCalled();
 
-        $dummyGroupGroupFilterProphecy = $this->prophesize(SerializerFilterInterface::class);
+        $dummyGroupGroupFilterProphecy = $this->prophesize(FilterInterface::class);
         $dummyGroupGroupFilterProphecy->apply($request, true, $attributes, [])->shouldBeCalled();
 
         $dummyGroupSearchFilterProphecy = $this->prophesize(FilterInterface::class);
@@ -84,7 +83,7 @@ class SerializerFilterContextBuilderTest extends TestCase
         $resourceMetadataFactoryProphecy = $this->prophesize(ResourceMetadataCollectionFactoryInterface::class);
         $resourceMetadataFactoryProphecy->create(DummyGroup::class)->willReturn($resourceMetadata)->shouldBeCalled();
 
-        $dummyGroupGroupFilterProphecy = $this->prophesize(SerializerFilterInterface::class);
+        $dummyGroupGroupFilterProphecy = $this->prophesize(FilterInterface::class);
         $dummyGroupGroupFilterProphecy->apply($request, true, $attributes, [])->shouldBeCalled();
 
         $dummyGroupSearchFilterProphecy = $this->prophesize(FilterInterface::class);
@@ -147,7 +146,7 @@ class SerializerFilterContextBuilderTest extends TestCase
         $resourceMetadataFactoryProphecy = $this->prophesize(ResourceMetadataCollectionFactoryInterface::class);
         $resourceMetadataFactoryProphecy->create(DummyGroup::class)->willReturn($resourceMetadata)->shouldBeCalled();
 
-        $dummyGroupGroupFilterProphecy = $this->prophesize(SerializerFilterInterface::class);
+        $dummyGroupGroupFilterProphecy = $this->prophesize(FilterInterface::class);
         $dummyGroupGroupFilterProphecy->apply($request, true, $attributes, [])->shouldBeCalled();
 
         $dummyGroupSearchFilterProphecy = $this->prophesize(FilterInterface::class);

@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace ApiPlatform\Tests\Serializer\Filter;
+namespace ApiPlatform\Serializer\Tests\Filter;
 
 use ApiPlatform\Serializer\Filter\GroupFilter;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\DummyGroup;
+use ApiPlatform\Serializer\Tests\Fixtures\DummyGroup;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;

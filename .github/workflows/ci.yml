@@ -203,6 +203,7 @@ jobs:
           - JsonSchema
           - OpenApi
           - Metadata
+          - Serializer
       fail-fast: false
     steps:
       - name: Checkout

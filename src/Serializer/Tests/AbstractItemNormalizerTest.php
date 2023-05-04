@@ -11,22 +11,22 @@
 
 declare(strict_types=1);
 
-namespace ApiPlatform\Tests\Serializer;
+namespace ApiPlatform\Serializer\Tests;
 
-use ApiPlatform\Api\IriConverterInterface;
-use ApiPlatform\Api\ResourceClassResolverInterface;
 use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\Property\Factory\PropertyMetadataFactoryInterface;
 use ApiPlatform\Metadata\Property\Factory\PropertyNameCollectionFactoryInterface;
 use ApiPlatform\Metadata\Property\PropertyNameCollection;
+use ApiPlatform\Metadata\ResourceClassResolverInterface;
 use ApiPlatform\Serializer\AbstractItemNormalizer;
-use ApiPlatform\Symfony\Security\ResourceAccessCheckerInterface;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\Dummy;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\DummyTableInheritance;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\DummyTableInheritanceChild;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\DummyTableInheritanceRelated;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\RelatedDummy;
-use ApiPlatform\Tests\Fixtures\TestBundle\Entity\SecuredDummy;
+use ApiPlatform\Serializer\Api\IriConverterInterface;
+use ApiPlatform\Serializer\Security\ResourceAccessCheckerInterface;
+use ApiPlatform\Serializer\Tests\Fixtures\Dummy;
+use ApiPlatform\Serializer\Tests\Fixtures\DummyTableInheritance;
+use ApiPlatform\Serializer\Tests\Fixtures\DummyTableInheritanceChild;
+use ApiPlatform\Serializer\Tests\Fixtures\DummyTableInheritanceRelated;
+use ApiPlatform\Serializer\Tests\Fixtures\RelatedDummy;
+use ApiPlatform\Serializer\Tests\Fixtures\SecuredDummy;
 use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
